@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Dive</title>
+    <link rel="stylesheet" href="./Styles/food-dive-game.css" />
+  </head>
+  <body>
+    <div id="splash" class="homepage">
+      <h1>FOOD DIVE</h1>
+      <div class="instructions">
+        <p>
+          Dive into the underwater world and discover amazing meals and recipes
+          <br />
+
+          To create your owm magic, you must first collect magical ingredients
+          <br />
+          Remember to stay away from the sea monsters
+        </p>
+      </div>
+      <div id="splashButtons">
+        <button id="start" onclick="startGame()">Start</button>
+        <button id="sound">Sound</button>
+        <button id="mute">Mute</button>
+      </div>
+    </div>
+    <div id="game-screen" class="game" style="display: none">
+      <div id="scores">
+        <div id="score"><span>Score:</span> <span id="scoreNum">0</span></div>
+        <div id="Lives"><span>Lives:</span> <span id="livesNum"></span></div>
+      </div>
+    </div>
+
+    <div id="gameover" class="stateGameOver" style="display: none">
+      <div class="endGame">
+        <h1>Game Over</h1>
+        <p>Your Score: <span id="score"></span></p>
+        <button id="restart" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+
+    <div id="gamewinn" class="stateGameWin" style="display: none">
+      <div class="endGame">
+        <h1>Game Win</h1>
+        <p>Your Score: <span id="score"></span></p>
+        <button id="restart" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+
+    <script src="./Javascript/script.js"></script>
+    <script src="./Javascript/game.js"></script>
+    <script src="./Javascript/Obstacles.js"></script>
+    <script src="./Javascript/Plants.js"></script>
+    <script src="./Javascript/Diver.js"></script>
+  </body>
+</html>
