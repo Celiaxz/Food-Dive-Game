@@ -1,10 +1,26 @@
 let splashScreen = document.getElementById("splash");
 let gameScreen = document.getElementById("game");
 let gameOverScreen = document.getElementById("gameover");
+let sound = document.getElementById("sound");
+const audio = new Audio("../sounds/heart-of-the-sea-01.mp3");
 
 const startButton = document.getElementById("start-button");
 const restartButton = document.getElementById("restart-button");
 let game;
+
+window.onload = () => {
+  sound.innerHTML = "Unmute Sound";
+  sound.addEventListener("click", () => {
+    const buttonText = sound.innerHTML;
+    if (buttonText === "Unmute Sound") {
+      sound.innerHTML = "Mute Sound";
+      audio.play();
+    } else {
+      sound.innerHTML = "Unmute Sound";
+      audio.pause();
+    }
+  });
+};
 
 function startGame() {
   console.log("start game");
@@ -63,20 +79,6 @@ function startGame() {
   });
 }
 
-// startButton.addEventListener("click", function () {
-//   startGame();
-// });
-
-// restartButton.addEventListener("click", () => {
-//   location.reload();
-// });
-
-function endGame() {
-  gameScreen.style.display = "none";
-  gameOverScreen.style.display = "block";
-}
 function restartGame() {
-  // gameOverScreen.style.display = "none";
-  // gameScreen.style.display = "block";
   location.reload();
 }

@@ -18,11 +18,16 @@
           <br />
           Remember to stay away from the sea monsters
         </p>
+        <h2>
+          Save 20 fruits to beat the game. Do watch out for the slimes and
+          boogey man!
+        </h2>
       </div>
+
       <div id="splashButtons">
         <button id="start" onclick="startGame()">Start</button>
-        <button id="sound">Sound</button>
-        <button id="mute">Mute</button>
+        <button id="sound"></button>
+        <!-- <button id="mute">Mute</button> -->
       </div>
     </div>
     <div id="game-screen" class="game" style="display: none">
@@ -34,16 +39,8 @@
 
     <div id="gameover" class="stateGameOver" style="display: none">
       <div class="endGame">
-        <h1>Game Over</h1>
-        <p>Your Score: <span id="score"></span></p>
-        <button id="restart" onclick="restartGame()">Restart</button>
-      </div>
-    </div>
-
-    <div id="gamewinn" class="stateGameWin" style="display: none">
-      <div class="endGame">
-        <h1>Game Win</h1>
-        <p>Your Score: <span id="score"></span></p>
+        <h1 id="winOrLost"></h1>
+        <p>Your Score: <span id="scoreCount"></span></p>
         <button id="restart" onclick="restartGame()">Restart</button>
       </div>
     </div>

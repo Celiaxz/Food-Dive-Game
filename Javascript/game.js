@@ -2,10 +2,10 @@ class Game {
   constructor() {
     this.startScreen = document.getElementById("splash");
     this.gameScreen = document.getElementById("game-screen");
-    this.gameEndScreen = document.getElementById("gameover");
-    this.gameWinScreen = document.getElementById("stateGameWin");
-    // this.height = 600;
-    // this.width = 500;
+    this.winOrLost = document.getElementById("winOrLost");
+    this.scoreCount = document.getElementById("scoreCount");
+    this.gameover = document.getElementById("gameover");
+
     this.player = new Diver(this.gameScreen);
     this.obstacles = [];
     this.food = [];
@@ -90,19 +90,23 @@ class Game {
     this.player.element.remove();
     this.food.forEach((food) => food.element.remove());
 
+    winOrLost.innerHTML = "Hurray!! You Saved All the Fruits!";
+    this.scoreCount.innerHTML = this.score;
+
     // Hide game screen
     this.gameScreen.style.display = "none";
-    // Show end game screen
-    this.gameWinScreen.style.display = "block";
+    this.gameover.style.display = null;
   }
 
   endGame() {
     this.player.element.remove();
     this.obstacles.forEach((obstacle) => obstacle.element.remove());
 
+    winOrLost.innerHTML = "Game Over";
+    this.scoreCount.innerHTML = this.score;
+
     // Hide game screen
     this.gameScreen.style.display = "none";
-    // Show end game screen
-    this.gameEndScreen.style.display = "block";
+    this.gameover.style.display = null;
   }
 }
