@@ -3,7 +3,7 @@ let gameScreen = document.getElementById("game");
 let gameOverScreen = document.getElementById("gameover");
 let sound = document.getElementById("sound");
 
-const audio = new Audio("../sounds/heart-of-the-sea-01.mp3");
+const audio = new Audio("./sounds/heart-of-the-sea-01.mp3");
 
 const startButton = document.getElementById("start-button");
 const restartButton = document.getElementById("restart-button");
