@@ -28,6 +28,7 @@ function startGame() {
   splashScreen.style.display = "none";
   game = new Game();
   game.start();
+  new MobileScreen();
   document.addEventListener("keydown", (event) => {
     const key = event.key;
     const possibleKeystrokes = [
@@ -52,7 +53,6 @@ function startGame() {
           game.player.directionY = 3;
           break;
       }
-      console.log(game.player.directionX, game.player.directionY);
     }
   });
   document.addEventListener("keyup", (event) => {

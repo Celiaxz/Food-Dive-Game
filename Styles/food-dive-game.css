@@ -54,7 +54,8 @@ h1 {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-body button {
+body button,
+.touch-icon {
   font-size: 30px;
   border: 0;
   padding: 20px 40px;
@@ -65,9 +66,17 @@ body button {
   margin-bottom: 15px;
   border-radius: 4px;
 }
-.mobile-controls button {
-  color: red;
-  background-color: blue;
+
+.touch-icon {
+  background-color: black;
+}
+
+.mobile-control {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  gap: 10px;
+  width: fit-content;
 }
 
 #game-screen {

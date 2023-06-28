@@ -1,4 +1,4 @@
-class Plants {
+class Fruits {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
     this.right = 0;

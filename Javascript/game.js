@@ -28,13 +28,12 @@ class Game {
 
   gameLoop() {
     this.update();
-    console.log(this.animateId);
     if (this.animateId % 200 === 0) {
       this.obstacles.push(new Obstacle(this.gameScreen));
     }
 
     if (this.animateId % 100 === 0) {
-      this.food.push(new Plants(this.gameScreen));
+      this.food.push(new Fruits(this.gameScreen));
     }
 
     if (this.isGameOver) {
