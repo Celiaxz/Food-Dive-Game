@@ -44,7 +44,12 @@ class Diver {
   }
 
   updatePosition() {
-    this.element.style.top = `${this.top}px`;
+    if (this.top <= 540) {
+      this.element.style.top = `${this.top}px`;
+    } else {
+      this.element.style.top = `${540}px`;
+    }
+
     this.element.style.left = `${this.left}px`;
   }
 
@@ -62,6 +67,5 @@ class Diver {
     } else {
       return false;
     }
-    return false;
   }
 }

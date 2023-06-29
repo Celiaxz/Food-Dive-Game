@@ -3,6 +3,9 @@ class Obstacle {
     this.gameScreen = gameScreen;
     this.right = 0;
     this.top = Math.floor(Math.random() * 500 + 70);
+    if (this.top > 510) {
+      this.top = 510;
+    }
     this.width = 80;
     this.height = 100;
     this.imageSources = [

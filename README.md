@@ -1,6 +1,6 @@
 # MOSSY DIVE 💚
 
-## [Play Game](https://celiaxz.github.io/Food-Dive-Game/) :)
+## [Play Game](https://celiaxz.github.io/Mossy-Dive-Game/) :)
 
 # Description
 
@@ -44,4 +44,4 @@ Mossy Dive is a game that allows a player to save fruits from a mossy dangerous 
 
 ### Deploy
 
-[Link](https://celiaxz.github.io/Food-Dive-Game/)
+[Link](https://celiaxz.github.io/Mossy-Dive-Game/)

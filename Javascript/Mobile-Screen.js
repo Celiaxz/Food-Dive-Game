@@ -14,7 +14,7 @@ class MobileScreen {
 
         setTimeout(() => {
           this.handleTouchEnd(buttonId);
-        }, 100);
+        }, 200);
       });
     }
   }

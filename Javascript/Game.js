@@ -8,7 +8,7 @@ class Game {
 
     this.player = new Diver(this.gameScreen);
     this.obstacles = [];
-    this.food = [];
+    this.fruits = [];
     this.isGameOver = false;
     this.isWon = false;
     this.score = 1;
@@ -33,7 +33,7 @@ class Game {
     }
 
     if (this.animateId % 100 === 0) {
-      this.food.push(new Fruits(this.gameScreen));
+      this.fruits.push(new Fruits(this.gameScreen));
     }
 
     if (this.isGameOver) {
@@ -61,8 +61,8 @@ class Game {
       }
     });
     this.obstacles = obstaclesToKeep;
-    const foodToKeep = [];
-    this.food.forEach((oneEat) => {
+    const fruitsToKeep = [];
+    this.fruits.forEach((oneEat) => {
       oneEat.move();
       if (this.player.didCollide(oneEat)) {
         oneEat.element.remove();
@@ -71,10 +71,10 @@ class Game {
       } else if (oneEat.top > this.gameScreen.offsetHeight) {
         this.score += 1;
       } else {
-        foodToKeep.push(oneEat);
+        fruitsToKeep.push(oneEat);
       }
     });
-    this.food = foodToKeep;
+    this.fruits = fruitsToKeep;
 
     if (this.score === 20) {
       this.isWon = true;
@@ -87,7 +87,7 @@ class Game {
 
   gameWin() {
     this.player.element.remove();
-    this.food.forEach((food) => food.element.remove());
+    this.fruits.forEach((fruit) => fruit.element.remove());
 
     winOrLost.innerHTML = "Hurray!! You Saved All the Fruits!";
     this.scoreCount.innerHTML = this.score;
