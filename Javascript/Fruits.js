@@ -6,9 +6,11 @@ class Fruits {
     this.width = 80;
     this.height = 100;
     this.imageSources = [
-      "./Images/food-1.gif",
-      "./Images/food-2.gif",
-      "./Images/food-3.gif",
+      "./Images/fruit-1.gif",
+      "./Images/fruit-2.gif",
+      "./Images/fruit-4.gif",
+      "./Images/fruit-5.gif",
+      "./Images/fruit-7.gif",
 
       // Add more image sources here
     ];
