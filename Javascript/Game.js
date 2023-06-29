@@ -108,4 +108,7 @@ class Game {
     this.gameScreen.style.display = "none";
     this.gameover.style.display = null;
   }
+  removeObstacles() {
+    this.obstacles.forEach((obstacle) => obstacle.element.remove());
+  }
 }
