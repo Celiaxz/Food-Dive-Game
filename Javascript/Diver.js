@@ -10,13 +10,16 @@ class Diver {
     this.element = document.createElement("img");
 
     this.element.src = "./Images/diver-anim-1.gif";
-    this.element.style.position = "absolute";
-
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
 
-    this.element.style.top = `${this.top}px`;
-    this.element.style.left = `${this.left}px`;
+    this.element.style.position = 'absolute';
+    this.element.style.top = '0';
+    this.element.style.left = '0';
+
+    this.element.style.transform = 'translate3d(var(--left), var(--top), 0)';
+    this.element.style.willChange = 'transform';
+    this.element.style.zIndex = '10';
 
     this.gameScreen.appendChild(this.element);
   }
@@ -24,33 +27,25 @@ class Diver {
   move() {
     this.left += this.directionX;
     this.top += this.directionY;
-    if (this.left < 10) {
-      this.left = 10;
-    }
-    if (this.top < 10) {
-      this.top = 10;
-    }
-    // handles right hand side
-    if (this.left > this.gameScreen.offsetWidth - this.width - 50) {
-      this.left = this.gameScreen.offsetWidth - this.width - 50;
-    }
 
-    // handles bottom side
-    if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
-      this.top = this.gameScreen.offsetHeight - this.height - 10;
-    }
+    // handles left border
+    this.left = Math.max(10, this.left);
+
+    // handles top border
+    this.top = Math.max(10, this.top);
+
+    // handles right border
+    this.left = Math.min(this.left, this.gameScreen.offsetWidth - this.width - 50);
+
+    // handles bottom border
+    this.top = Math.min(this.top, this.gameScreen.offsetHeight - this.height - 10);
 
     this.updatePosition();
   }
 
   updatePosition() {
-    if (this.top <= 540) {
-      this.element.style.top = `${this.top}px`;
-    } else {
-      this.element.style.top = `${540}px`;
-    }
-
-    this.element.style.left = `${this.left}px`;
+    this.element.style.setProperty('--top', `${this.top}px`);
+    this.element.style.setProperty('--left', `${this.left}px`);
   }
 
   didCollide(obstacle) {

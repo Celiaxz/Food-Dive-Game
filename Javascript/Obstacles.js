@@ -15,13 +15,19 @@ class Obstacle {
 
       // Add more image sources here
     ];
-    this.element = document.createElement("img");
 
-    this.element.style.position = "absolute";
+    this.element = document.createElement("img");
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
-    this.element.style.top = `${this.top}px`;
-    this.element.style.right = `${this.right}px`;
+
+    this.element.style.position = 'absolute';
+    this.element.style.top = '0';
+    this.element.style.right = '0';
+
+    this.element.style.transform = 'translate3d(var(--left), var(--top), 0)';
+    this.element.style.willChange = 'transform';
+    this.element.style.zIndex = '10';
+
     this.gameScreen.appendChild(this.element);
     this.setImageSource();
   }
@@ -38,7 +44,7 @@ class Obstacle {
   }
 
   updatePosition() {
-    this.element.style.top = `${this.top}px`;
-    this.element.style.right = `${this.right}px`;
+    this.element.style.setProperty('--top', `${this.top}px`);
+    this.element.style.setProperty('--left', `${-this.right}px`);
   }
 }
