@@ -4,18 +4,22 @@ class MobileScreen {
   }
 
   initialise() {
-    const touchIcons = document.getElementById("mobile-controls");
-    const buttons = touchIcons.children;
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", (event) => {
-        event.preventDefault();
-        const buttonId = event.target.id;
-        this.handleTouchStart(buttonId);
+    const buttons = document.querySelectorAll("#mobile-controls .touch-icon");
 
-        setTimeout(() => {
-          this.handleTouchEnd(buttonId);
-        }, 200);
-      });
+    for (const button of buttons) {
+      button.addEventListener('mousedown', (event) => {
+        this.handleTouchStart(event.target.id);
+      }, false);
+      button.addEventListener('mouseup', (event) => {
+        this.handleTouchEnd(event.target.id);
+      }, false);
+
+      button.addEventListener('touchstart', (event) => {
+        this.handleTouchStart(event.target.id);
+      }, false);
+      button.addEventListener('touchend', (event) => {
+        this.handleTouchEnd(event.target.id);
+      }, false);
     }
   }
 
